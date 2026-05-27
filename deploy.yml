@@ -1,0 +1,46 @@
+name: deploy to github pages
+
+on:
+  push:
+    branches:
+      - main # change to master if your primary branch is called master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: set up node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: install dependencies
+        run: npm ci # if this fails, try swapping to 'npm install'
+
+      - name: build production application
+        run: npm run build
+
+      - name: upload production build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # vite outputs production code to the dist directory
+
+      - name: deploy asset payload to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4
