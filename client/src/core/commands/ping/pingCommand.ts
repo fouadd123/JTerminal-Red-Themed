@@ -3,19 +3,19 @@ import { CommandType } from '../../command';
 const pingCommand: CommandType = {
   func: 'ping',
   name: 'ping',
-  desc: '检测某个地址是否存活',
+  desc: 'check if a specific address is alive',
   alias: [],
   params: [
     {
       key: 'dest',
-      desc: '目标地址',
+      desc: 'target address',
       required: true,
     },
   ],
   options: [
     {
       key: 'timeout',
-      desc: '请求超时时间(单位:毫秒)',
+      desc: 'request timeout limit (unit: milliseconds)',
       alias: ['t'],
       type: 'string',
       defaultValue: '3000',
@@ -25,7 +25,7 @@ const pingCommand: CommandType = {
     const { _ } = options;
     const { timeout = '3000' } = options;
     if (_.length < 1) {
-      terminal.writeErrorOutput('参数不足');
+      terminal.writeErrorOutput('missing required parameters');
       return;
     }
     var dest = _[0];
@@ -49,17 +49,17 @@ const pingCommand: CommandType = {
         if (resp.ok || resp.status == 200 || resp.type == 'opaque') {
           console.log(resp);
           const finishTime = new Date().getTime();
-          terminal.writeSuccessOutput('目标地址正常');
+          terminal.writeSuccessOutput('target address is alive');
           terminal.writeInfoOutput(
-            `延迟=${(finishTime - startTime).toString()}ms`
+            `latency=${(finishTime - startTime).toString()}ms`
           );
         } else {
-          terminal.writeErrorOutput('ping 不通！');
+          terminal.writeErrorOutput('ping failed!');
         }
       })
       .catch((error) => {
         console.log(error);
-        terminal.writeErrorOutput('ping 不通！');
+        terminal.writeErrorOutput('ping failed!');
       });
   },
 };
