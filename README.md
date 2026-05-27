@@ -26,3 +26,4 @@
 ​search (alias: s) - routes search parameters. defaults to configured systems; supports flags for global platforms like google, github, or tech wikis.
 ​goto - instant direct browser execution to a target web address.
 ​resume - jumps directly to the local curriculum vitae/profile generator deployment window.
+(yes i generated this md with ai)
