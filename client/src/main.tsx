@@ -33,6 +33,7 @@ root.render(
             <MantineProvider
               withNormalizeCSS
               theme={{
+                colorScheme: 'dark', /* forces mantine elements dark */
                 globalStyles: (theme) => ({
                   div: {
                     backgroundRepeat: 'no-repeat',
@@ -41,16 +42,17 @@ root.render(
                   ol:{paddingLeft:'14px'},
                   ul:{paddingLeft:'14px'},
                   'table,thead,tr,td,th': {
-                    color: '#fff',
+                    color: '#f0f0f0', /* matching red hat text */
                   },
                   input: {
-                    caretColor: '#000',
+                    caretColor: '#ee0000', /* red hat blinking cursor */
                   },
                 }),
               }}
             >
               <NotificationsProvider>
-                <ModalsProvider labels={{ confirm: '确认', cancel: '取消' }}>
+                {/* changed button labels from chinese to english */}
+                <ModalsProvider labels={{ confirm: 'confirm', cancel: 'cancel' }}>
                   <App />
                 </ModalsProvider>
               </NotificationsProvider>
