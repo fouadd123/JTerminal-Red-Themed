@@ -9,7 +9,8 @@ const Timestamp = new Date().getTime();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  // ⚠️ CRITICAL: Updated to match your exact repo name case-sensitively
+  base: '/JTerminal-Red-Themed/', 
   plugins: [react()],
   resolve: {
     alias: {
