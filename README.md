@@ -1,33 +1,28 @@
-## 一个命令行风格的浏览器主页
-client: 客户端代码
-
-server: 服务端代码，用来简单地实现登录功能和标签的curd（由于代码结构是用的旧项目的，很多地方也只是复制粘贴，没有优化，所以代码可能有点丑）
-
-## 技术栈
-client: [react](https://react.dev/) + [typesscript](https://www.typescriptlang.org/) + [Matine](https://mantine.dev/)(UI框架) + [React Recoil](https://recoiljs.org/)(状态管理) + [localforage](http://localforage.docschina.org/)(数据持久化)
-
-server: midwayjs
-
-### terminal使用方法
-> 输入help查看所有命令，
-
-> 输入的时候会有提示，按tab自动补全提示的第一项
-
-> 键盘上下键可以上下选择，按下alt+enter选中并执行命令（因为直接按下enter是执行当前输入框的命令，所以加了个alt键进行区分）
-
-> ctrl + 鼠标双击某个已执行命令可快速重复执行
-
-> ctrl + b 打开/隐藏书签列表，已默认内置了一些书签，可以新增书签，若要同步书签需要先注册登录使用
-
-> 输入 “'” 进入书签检索模式
-
-### terminal命令
-基本每个命令都会简短的别名，输入命令的时候有提示，也可以通过help命令查看
-1. login 登录 
-2. logout 退出登录
-3. register 注册
-4. bookmark 打开书签列表
-5. background 随机背景图片
-6. search 搜索（别名：s），默认使用百度，其他搜索命令有 baidu,google,zhihu等，用法及别名及参数请输入help查看
-7. goto 网页跳转
-8. resume 跳转到简历编辑页面
+​🔴 red hat terminal home page
+​a sleek, high-efficiency command-line browser home page themed after enterprise red hat enterprise linux (rhel) aesthetics.
+​📁 project structure
+​client: frontend application code.
+​server: backend authentication engine managing user profiles and layout synchronization.
+​🛠 tech stack
+​frontend: react + typescript
+​ui framework: mantine ui (modified with red hat deep-dark styles)
+​state management: recoil
+​local storage: localforage
+​backend: midwayjs
+​⌨️ terminal usage guidelines
+​type help at any time to list all available system commands.
+​auto-completion: predictive suggestions appear dynamically as you type. press tab to auto-complete the first matched system parameter.
+​suggestion navigation: use the up and down arrow keys to cycle through predictions. press alt + enter to select and execute the highlighted item.
+​execution history: press ctrl + double-click on any previously executed terminal output block to instantly re-run that command.
+​bookmark layout: press ctrl + b to toggle the side menu. a default list of reference nodes is built-in. account registration is required to push cloud configurations.
+​quick search filter: press the single quote key (') to drop straight into the contextual index filter mode.
+​🚀 default platform commands
+​every subsystem contains abbreviated system aliases. execute help <command> for detailed configuration flags and routing contexts.
+​login - authenticate user profile credentials.
+​logout - destroy local terminal access tokens.
+​register - provision a new identity on the local grid.
+​bookmark - command-line access layer for managing bookmarks.
+​background - rotate underlying dashboard assets or reset to the default clean onyx grid.
+​search (alias: s) - routes search parameters. defaults to configured systems; supports flags for global platforms like google, github, or tech wikis.
+​goto - instant direct browser execution to a target web address.
+​resume - jumps directly to the local curriculum vitae/profile generator deployment window.
